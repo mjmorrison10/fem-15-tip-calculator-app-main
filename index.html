@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />  <!-- favicon -->
+
+    <link rel="stylesheet" href="style.css">  <!-- link to style sheet -->
+
+    <title>MJMorrison10 | Tip calculator app</title> <!-- title of page -->
+
+    
+    <!-- link to google fonts - Space Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">   
+
+
+    <script
+      src="https://kit.fontawesome.com/0252bd3897.js"
+      crossorigin="anonymous"
+    ></script>  <!-- link to font awesome -->
+  </head>
+  <body>
+    <main>
+      <section class="left-section">
+        <div class="bill">Bill</div> 
+        <div class="bill-input">
+          <input type="number" placeholder="0" />
+          <i class="fas fa-dollar-sign"></i>
+        </div>
+
+        <div class="tip-header">Select Tip %</div>
+        <div class="tip-top">
+          <button class="percent-5">5%</button>
+          <button class="percent-10">10%</button>
+          <button class="percent-15">15%</button>
+        </div>
+        <div class="tip-bottom">
+          <button class="percent-25">25%</button>
+          <button class="percent-50">50%</button>
+          <button id="custom" class="percent-custom">Custom</button>
+        </div>
+        <div class="people-number">Number of People</div>
+        <div class="people-input">
+          <input type="number">
+          <i class="fas fa-user"></i>
+          </input>
+        </div>
+      </section>
+
+      <section class="right-section">
+        <div class="tip-amount">
+          <div class="tip-amount-tip">Tip Amount</div>
+          <div class="tip-amount-person">/ person</div>
+          <span class="tip-amount-cash">$0.00</span>
+        </div>
+        <div class="tip-total">
+          <div class="tip-total-total">Total</div>
+          <div class="tip-total-person">/ person</div>
+          <span class="tip-total-cash">$0.00</span>
+        </div>
+        <div class="tip-spacing"></div>
+        <button class="button reset">Reset</button>
+      </section>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://portfolio-mjm-react.netlify.app/">mjmorrison10</a>.
+    </div>
+  </body>
+</html>

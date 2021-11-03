@@ -1,0 +1,354 @@
+:root {
+  --color-strong-cyan: hsl(172, 67%, 45%);
+  --color-strong-cyan-hue: 172;
+  --color-strong-cyan-saturation: 67%;
+  --color-strong-cyan-lightness: 45%;
+  --color-strong-cyan-hsl: var(--color-strong-cyan-hue)
+    var(--color-strong-cyan-saturation) var(--color-strong-cyan-lightness);
+
+  --color-very-dark-cyan: hsl(183, 100%, 15%);
+  --color-dark-grayish-cyan: hsl(186, 14%, 43%);
+  --color-dark-grayish-cyan2: hsl(184, 14%, 56%);
+  --color-light-grayish-cyan: hsl(185, 41%, 84%);
+  --color-light-grayish-cyan2: hsl(189, 41%, 97%);
+  --color-white: hsl(0, 0%, 100%);
+
+  --fontSize: 1vw;
+
+  --fontSize-9x-small: calc(var(--fontSize) * 0.9);
+  --fontSize-8x-small: calc(var(--fontSize) * 0.8);
+  --fontSize-7x-small: calc(var(--fontSize) * 0.7);
+  --fontSize-6x-small: calc(var(--fontSize) * 0.6);
+  --fontSize-5x-small: calc(var(--fontSize) * 0.5);
+  --fontSize-4x-small: calc(var(--fontSize) * 0.4);
+  --fontSize-3x-small: calc(var(--fontSize) * 0.3);
+  --fontSize-2x-small: calc(var(--fontSize) * 0.2);
+  --fontSize-1x-small: calc(var(--fontSize) * 0.1);
+
+  --fontSize-medium: var(--fontSize);
+
+  --fontSize-1x-large: calc(var(--fontSize) * 1.1);
+  --fontSize-2x-large: calc(var(--fontSize) * 1.2);
+  --fontSize-3x-large: calc(var(--fontSize) * 1.3);
+  --fontSize-4x-large: calc(var(--fontSize) * 1.4);
+  --fontSize-5x-large: calc(var(--fontSize) * 1.5);
+  --fontSize-6x-large: calc(var(--fontSize) * 1.6);
+  --fontSize-7x-large: calc(var(--fontSize) * 1.7);
+  --fontSize-8x-large: calc(var(--fontSize) * 1.8);
+  --fontSize-9x-large: calc(var(--fontSize) * 1.9);
+  --fontSize-2xx-large: calc(var(--fontSize) * 2);
+
+  --fontWeight-light: 400;
+  --fontWeight-medium: 500;
+  --fontWeight-bold: 700;
+
+  --borderRadius: 24px;
+  --borderRadius-small: calc(var(--borderRadius) * 0.8);
+  --borderRadius-x-small: calc(var(--borderRadius) * 0.7);
+  --borderRadius-2x-small: calc(var(--borderRadius) * 0.6);
+  --borderRadius-half: calc(var(--borderRadius) * 0.5);
+  --borderRadius-3x-small: calc(var(--borderRadius) * 0.4);
+  --borderRadius-4x-small: calc(var(--borderRadius) * 0.3);
+  --borderRadius-5x-small: calc(var(--borderRadius) * 0.2);
+  --borderRadius-6x-small: calc(var(--borderRadius) * 0.1);
+
+  --borderRadius-medium: var(--borderRadius);
+  --borderRadius-large: calc(var(--borderRadius) * 1.2);
+
+  --padding: 2rem;
+  --padding-half: calc(var(--padding) * 0.5);
+  --padding-small: calc(var(--padding) * 0.8);
+  --padding-x-small: calc(var(--padding) * 0.7);
+  --padding-2x-small: calc(var(--padding) * 0.6);
+  --padding-3x-small: calc(var(--padding) * 0.4);
+  --padding-4x-small: calc(var(--padding) * 0.2);
+  --padding-5x-small: calc(var(--padding) * 0.1);
+
+  --padding-medium: var(--padding);
+  --padding-large: calc(var(--padding) * 1.2);
+
+  font-family: "Space Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--color-light-grayish-cyan);
+}
+
+main {
+  background-color: var(--color-white);
+  border-radius: var(--borderRadius-medium);
+  display: flex;
+  width: 60vw;
+  height: 50vh;
+  padding: var(--padding-medium);
+}
+
+.left-section {
+  flex: 1;
+  margin-right: var(--padding-half);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "bill"
+    "bill-input"
+    "tip-header"
+    "tip-top"
+    "tip-bottom"
+    "people-number"
+    "people-input";
+}
+
+.bill {
+  grid-area: bill;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: var(--padding-4x-small);
+}
+
+.bill-input {
+  grid-area: bill-input;
+  position: relative;
+  color: var(--color-dark-grayish-cyan2);
+}
+
+.bill-input i,
+.people-input i {
+  position: absolute;
+  left: var(--padding-2x-small);
+  font-size: var(--fontSize-2x-large);
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+.bill-input input,
+.people-input input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: var(--color-light-grayish-cyan2);
+  border-radius: var(--borderRadius-5x-small);
+  /* font-size: 1.5vw; */
+  font-size: var(--fontSize-5x-large);
+  text-align: right;
+  padding-right: var(--padding-2x-small);
+}
+
+.bill-input input::placeholder {
+  /* font-size: 1.5vw; */
+  font-size: var(--fontSize-5x-large);
+  color: var(--color-dark-grayish-cyan2);
+}
+
+.tip-header {
+  grid-area: tip-header;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: var(--padding-4x-small);
+  color: var(--color-dark-grayish-cyan);
+  font-weight: var(--fontWeight-bold);
+}
+
+.tip-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "percent-5 percent-10 percent-15";
+  grid-area: tip-top;
+  grid-gap: var(--padding-3x-small);
+  padding-bottom: var(--padding-4x-small);
+}
+
+.tip-top button,
+.tip-bottom button {
+  color: var(--color-light-grayish-cyan2);
+  font-weight: var(--fontWeight-bold);
+  font-size: var(--fontSize-3x-large);
+  background-color: var(--color-very-dark-cyan);
+  border: none;
+  border-radius: var(--borderRadius-5x-small);
+}
+
+.percent-5 {
+  grid-area: percent-5;
+}
+
+.percent-10 {
+  grid-area: percent-10;
+}
+
+.percent-15 {
+  grid-area: percent-15;
+}
+
+.tip-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "percent-25 percent-50 percent-custom";
+  grid-area: tip-bottom;
+  grid-gap: var(--padding-3x-small);
+  padding-top: var(--padding-5x-small);
+}
+
+.percent-25 {
+  grid-area: percent-25;
+}
+
+.percent-50 {
+  grid-area: percent-50;
+}
+
+.percent-custom {
+  grid-area: percent-custom;
+}
+
+#custom {
+  background-color: var(--color-light-grayish-cyan2);
+  color: var(--color-dark-grayish-cyan);
+}
+
+.people-number {
+  grid-area: people-number;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding-bottom: var(--padding-5x-small);
+  color: var(--color-dark-grayish-cyan);
+  font-weight: var(--fontWeight-bold);
+}
+
+.people-input {
+  grid-area: people-input;
+  position: relative;
+  color: var(--color-dark-grayish-cyan2);
+}
+
+.right-section {
+  flex: 1;
+  margin-left: var(--padding-half);
+  padding: var(--padding-2x-small);
+  background-color: var(--color-very-dark-cyan);
+  color: var(--color-light-grayish-cyan2);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "tip-amount"
+    "tip-total"
+    "tip-spacing"
+    "button";
+}
+
+.tip-amount {
+  grid-area: tip-amount;
+}
+
+.tip-total {
+  grid-area: tip-total;
+}
+
+.tip-spacing {
+  grid-area: tip-spacing;
+}
+
+.right-section button {
+  grid-area: button;
+  width: 100%;
+  border-radius: var(--borderRadius-5x-small);
+  border: none;
+  background-color: hsl(var(--color-strong-cyan-hsl) / 0.25);
+  font-weight: var(--fontWeight-bold);
+  font-size: var(--fontSize-6x-large);
+  color: var(--color-very-dark-cyan);
+  margin: var(--padding-4x-small) 0;
+}
+
+.tip-amount {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "tip-amount-tip tip-amount-cash"
+    "tip-amount-person tip-amount-cash";
+}
+
+.tip-amount-tip {
+  grid-area: tip-amount-tip;
+}
+
+.tip-amount-person {
+  grid-area: tip-amount-person;
+}
+
+.tip-amount-cash {
+  grid-area: tip-amount-cash;
+  display: flex;
+  align-items: flex-end;
+}
+
+.tip-total {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "tip-total-total tip-total-cash"
+    "tip-total-person tip-total-cash";
+}
+
+.tip-total-total {
+  grid-area: tip-total-total;
+}
+
+.tip-total-person {
+  grid-area: tip-total-person;
+}
+
+.tip-total-cash {
+  grid-area: tip-total-cash;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
