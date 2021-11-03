@@ -66,6 +66,10 @@
 
   --padding-medium: var(--padding);
   --padding-large: calc(var(--padding) * 1.2);
+  --padding-x-large: calc(var(--padding) * 1.4);
+  --padding-2x-large: calc(var(--padding) * 1.6);
+  --padding-3x-large: calc(var(--padding) * 1.8);
+  --padding-4x-large: calc(var(--padding) * 2);
 
   font-family: "Space Mono", monospace;
 }
@@ -129,7 +133,9 @@ main {
   grid-area: bill;
   display: flex;
   align-items: flex-end;
-  padding-bottom: var(--padding-4x-small);
+  padding-bottom: var(--padding-5x-small);
+  color: var(--color-dark-grayish-cyan);
+  font-weight: var(--fontWeight-bold);
 }
 
 .bill-input {
@@ -254,14 +260,16 @@ main {
   grid-area: people-input;
   position: relative;
   color: var(--color-dark-grayish-cyan2);
+  margin-bottom: var(--padding-3x-small);
 }
 
 .right-section {
   flex: 1;
   margin-left: var(--padding-half);
-  padding: var(--padding-2x-small);
+  padding: var(--padding-2x-large);
   background-color: var(--color-very-dark-cyan);
   color: var(--color-light-grayish-cyan2);
+  border-radius: var(--borderRadius);
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -290,7 +298,7 @@ main {
   width: 100%;
   border-radius: var(--borderRadius-5x-small);
   border: none;
-  background-color: hsl(var(--color-strong-cyan-hsl) / 0.25);
+  background-color: hsl(var(--color-strong-cyan-hsl) / 0.123);
   font-weight: var(--fontWeight-bold);
   font-size: var(--fontSize-6x-large);
   color: var(--color-very-dark-cyan);
@@ -310,16 +318,33 @@ main {
 
 .tip-amount-tip {
   grid-area: tip-amount-tip;
+  font-weight: var(--fontWeight-bold);
+  font-size: var(--fontSize-8x-small);
+  color: var(--color-light-grayish-cyan);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
 }
 
+/* dsddss */
 .tip-amount-person {
   grid-area: tip-amount-person;
+  font-weight: var(--fontWeight-bold);
+  font-size: var(--fontSize-7x-small);
+  color: var(--color-dark-grayish-cyan2);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .tip-amount-cash {
+  font-weight: var(--fontWeight-bold);
+  font-size: var(--fontSize-2xx-large);
+  color: var(--color-strong-cyan);
   grid-area: tip-amount-cash;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .tip-total {
@@ -335,14 +360,32 @@ main {
 
 .tip-total-total {
   grid-area: tip-total-total;
+  font-weight: var(--fontWeight-bold);
+  font-size: var(--fontSize-8x-small);
+  color: var(--color-light-grayish-cyan);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
 }
 
 .tip-total-person {
   grid-area: tip-total-person;
+  font-weight: var(--fontWeight-bold);
+  font-size: var(--fontSize-7x-small);
+  color: var(--color-dark-grayish-cyan2);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .tip-total-cash {
   grid-area: tip-total-cash;
+  font-weight: var(--fontWeight-bold);
+  font-size: var(--fontSize-2xx-large);
+  color: var(--color-strong-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .attribution {
