@@ -30,30 +30,30 @@
   </head>
   <body>
     <main>
-      <section class="left-section">
+      <form class="left-section">
         <div class="bill">Bill</div> 
         <div class="bill-input">
-          <input type="number" placeholder="0" />
+          <input class="bill-number" placeholder="0" type="number" />
           <i class="fas fa-dollar-sign"></i>
         </div>
 
         <div class="tip-header">Select Tip %</div>
         <div class="tip-top">
-          <button class="percent-5">5%</button>
-          <button class="percent-10">10%</button>
-          <button class="percent-15">15%</button>
-          <button class="percent-25">25%</button>
-          <button class="percent-50">50%</button>
-          <button id="custom" class="percent-custom"><input type="number" placeholder="Custom"></button>
+          <button class="percent-5 percent-button">5%</button>
+          <button class="percent-10 percent-button">10%</button>
+          <button class="percent-15 percent-button">15%</button>
+          <button class="percent-25 percent-button">25%</button>
+          <button class="percent-50 percent-button">50%</button>
+          <button id="custom" class="percent-custom percent-button"><input type="number" placeholder="Custom"></button>
         </div>
         <div class="people-number">Number of People</div>
         <div class="people-input">
           <div class="people-input-error">Can't be zero</div>
-          <input class="" type="number">
+          <input class="numberofpeople" type="number">
           <i class="fas fa-user"></i>
           </input>
         </div>
-      </section>
+      </form>
 
       <section class="right-section">
         <div class="tip-amount">
@@ -81,4 +81,6 @@
       </div>
     </footer>
   </body>
+
+  <script src="script.js"></script>
 </html>
