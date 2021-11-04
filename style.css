@@ -12,8 +12,9 @@
   --color-light-grayish-cyan: hsl(185, 41%, 84%);
   --color-light-grayish-cyan2: hsl(189, 41%, 97%);
   --color-white: hsl(0, 0%, 100%);
+  --color-red: hsl(0, 100%, 50%);
 
-  --fontSize: 1vw;
+  --fontSize: 24px;
 
   --fontSize-9x-small: calc(var(--fontSize) * 0.9);
   --fontSize-8x-small: calc(var(--fontSize) * 0.8);
@@ -70,11 +71,10 @@
   --padding-2x-large: calc(var(--padding) * 1.6);
   --padding-3x-large: calc(var(--padding) * 1.8);
   --padding-4x-large: calc(var(--padding) * 2);
-
-  font-family: "Space Mono", monospace;
 }
 
 * {
+  font-family: "Space Mono", monospace;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -166,6 +166,15 @@ main {
   font-size: var(--fontSize-5x-large);
   text-align: right;
   padding-right: var(--padding-2x-small);
+  color: var(--color-very-dark-cyan);
+  font-weight: var(--fontWeight-bold);
+}
+
+.bill-input input:focus,
+.bill-input textarea:focus,
+.people-input input:focus,
+.people-input textarea:focus {
+  outline: 2px solid var(--color-strong-cyan);
 }
 
 .bill-input input::placeholder {
@@ -199,10 +208,24 @@ main {
 .tip-bottom button {
   color: var(--color-light-grayish-cyan2);
   font-weight: var(--fontWeight-bold);
-  font-size: var(--fontSize-3x-large);
+  font-size: var(--fontSize-medium);
   background-color: var(--color-very-dark-cyan);
   border: none;
   border-radius: var(--borderRadius-5x-small);
+  transition: 250ms ease;
+}
+
+.tip-top button:hover,
+.tip-bottom button:hover {
+  color: var(--color-very-dark-cyan);
+  background-color: hsl(var(--color-strong-cyan-hsl) / 0.25);
+  cursor: pointer;
+}
+
+.tip-top .selected,
+.tip-bottom .selected {
+  background-color: var(--color-strong-cyan);
+  color: var(--color-very-dark-cyan);
 }
 
 .percent-5 {
@@ -246,6 +269,31 @@ main {
   color: var(--color-dark-grayish-cyan);
 }
 
+#custom input {
+  text-align: end;
+  padding: 0 var(--padding-3x-small);
+  font-size: var(--fontSize-medium);
+  outline: none;
+  border: none;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--borderRadius-5x-small);
+  background-color: var(--color-light-grayish-cyan2);
+  color: var(--color-very-dark-cyan);
+  font-weight: var(--fontWeight-bold);
+}
+
+#custom input:focus {
+  outline: 2px solid var(--color-strong-cyan);
+}
+
+#custom input::placeholder {
+  text-align: center;
+  font-size: var(--fontSize-medium);
+  color: var(--color-very-dark-cyan);
+  font-weight: var(--fontWeight-bold);
+}
+
 .people-number {
   grid-area: people-number;
   display: flex;
@@ -261,6 +309,18 @@ main {
   position: relative;
   color: var(--color-dark-grayish-cyan2);
   margin-bottom: var(--padding-3x-small);
+}
+
+.people-input-error {
+  position: absolute;
+  right: 0;
+  top: -25px;
+  color: var(--color-red);
+  display: none;
+}
+
+.people-input .people-error {
+  border: 2px solid var(--color-red);
 }
 
 .right-section {
@@ -293,16 +353,21 @@ main {
   grid-area: tip-spacing;
 }
 
-.right-section button {
+.reset {
   grid-area: button;
   width: 100%;
   border-radius: var(--borderRadius-5x-small);
   border: none;
   background-color: hsl(var(--color-strong-cyan-hsl) / 0.123);
   font-weight: var(--fontWeight-bold);
-  font-size: var(--fontSize-6x-large);
+  font-size: var(--fontSize-medium);
   color: var(--color-very-dark-cyan);
   margin: var(--padding-4x-small) 0;
+}
+
+.reset:hover {
+  cursor: pointer;
+  background-color: hsl(var(--color-strong-cyan-hsl) / 0.7);
 }
 
 .tip-amount {
@@ -319,7 +384,7 @@ main {
 .tip-amount-tip {
   grid-area: tip-amount-tip;
   font-weight: var(--fontWeight-bold);
-  font-size: var(--fontSize-8x-small);
+  font-size: var(--fontSize-9x-small);
   color: var(--color-light-grayish-cyan);
   display: flex;
   align-items: flex-end;
@@ -361,7 +426,7 @@ main {
 .tip-total-total {
   grid-area: tip-total-total;
   font-weight: var(--fontWeight-bold);
-  font-size: var(--fontSize-8x-small);
+  font-size: var(--fontSize-9x-small);
   color: var(--color-light-grayish-cyan);
   display: flex;
   align-items: flex-end;
@@ -388,10 +453,31 @@ main {
   justify-content: flex-end;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
 }
+
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 1250px) {
+  main {
+    width: 80vw;
+  }
+}
+
+
+@media (max-width: 850px) {
+  main {
+    width: 100vw;
+    height: auto;
+    flex-direction: column;
+  }
 }
