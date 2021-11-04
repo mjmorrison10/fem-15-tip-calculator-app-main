@@ -97,7 +97,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background-color: var(--color-light-grayish-cyan);
 }
@@ -106,8 +106,8 @@ main {
   background-color: var(--color-white);
   border-radius: var(--borderRadius-medium);
   display: flex;
-  width: 60vw;
-  height: 50vh;
+  width: auto;
+  height: auto;
   padding: var(--padding-medium);
 }
 
@@ -116,7 +116,7 @@ main {
   margin-right: var(--padding-half);
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -124,7 +124,6 @@ main {
     "bill-input"
     "tip-header"
     "tip-top"
-    "tip-bottom"
     "people-number"
     "people-input";
 }
@@ -195,17 +194,17 @@ main {
 .tip-top {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
-  grid-template-areas: "percent-5 percent-10 percent-15";
+  grid-template-areas:
+    "percent-5 percent-10 percent-15"
+    "percent-25 percent-50 percent-custom";
   grid-area: tip-top;
-  grid-gap: var(--padding-3x-small);
-  padding-bottom: var(--padding-4x-small);
+  grid-gap: var(--padding-4x-small);
 }
 
-.tip-top button,
-.tip-bottom button {
+.tip-top button {
   color: var(--color-light-grayish-cyan2);
   font-weight: var(--fontWeight-bold);
   font-size: var(--fontSize-medium);
@@ -215,8 +214,7 @@ main {
   transition: 250ms ease;
 }
 
-.tip-top button:hover,
-.tip-bottom button:hover {
+.tip-top button:hover {
   color: var(--color-very-dark-cyan);
   background-color: hsl(var(--color-strong-cyan-hsl) / 0.25);
   cursor: pointer;
@@ -238,18 +236,6 @@ main {
 
 .percent-15 {
   grid-area: percent-15;
-}
-
-.tip-bottom {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "percent-25 percent-50 percent-custom";
-  grid-area: tip-bottom;
-  grid-gap: var(--padding-3x-small);
-  padding-top: var(--padding-5x-small);
 }
 
 .percent-25 {
@@ -467,17 +453,57 @@ footer {
   color: hsl(228, 45%, 44%);
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 850px) {
+  /* body {
+        height: auto;
+    } */
   main {
-    width: 80vw;
+    width: 100vw;
+    height: fit-content;
+    flex-direction: column;
   }
 }
 
-
-@media (max-width: 850px) {
+@media (max-width: 462px) {
   main {
-    width: 100vw;
-    height: auto;
-    flex-direction: column;
+    /* margin-top: 10rem; */
+    margin: 1rem 0;
+  }
+  .left-section {
+    grid-template-rows: 0.1fr 0.25fr 0.3fr 1fr 0.3fr 0.25fr;
+    margin-right: 0;
+  }
+  .right-section {
+    margin-left: 0;
+    padding: var(--padding-small);
+  }
+  .tip-top {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: var(--padding-2x-small);
+    grid-template-areas:
+      "percent-5 percent-10"
+      "percent-15 percent-25"
+      "percent-50 percent-custom";
+  }
+  .tip-amount-tip,
+  .tip-total-total {
+    font-size: 4vw;
+  }
+  .tip-amount-person,
+  .tip-total-person {
+    font-size: 3.5vw;
+  }
+  .tip-amount-cash,
+  .tip-total-cash {
+    font-size: 8vw;
+  }
+  .reset {
+    background-color: var(--color-strong-cyan);
+    font-size: 6vw;
+  }
+
+  footer {
+    position: inherit;
   }
 }
