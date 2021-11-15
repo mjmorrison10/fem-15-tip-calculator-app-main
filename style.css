@@ -143,6 +143,15 @@ main {
   color: var(--color-dark-grayish-cyan2);
 }
 
+.bill-error {
+  display: none;
+  position: absolute;
+  bottom: -2rem;
+  right: 0;
+  color: var(--color-red);
+  font-weight: var(--fontWeight-bold);
+}
+
 .bill-input i,
 .people-input i {
   position: absolute;
