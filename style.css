@@ -482,6 +482,11 @@ footer {
     grid-template-rows: 0.1fr 0.25fr 0.3fr 1fr 0.3fr 0.25fr;
     margin-right: 0;
   }
+
+  .bill-error {
+    bottom: none; 
+    top: -2rem;
+  }
   .right-section {
     margin-left: 0;
     padding: var(--padding-small);
